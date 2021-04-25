@@ -12,7 +12,7 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
-    
+
     @OneToMany(mappedBy = "course")
     @JsonIgnore
     private List<Section> sections;

@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="owners")
@@ -22,6 +24,8 @@ public class Owner {
   private String username;
   private String password;
   private String email;
+
+  @Temporal(TemporalType.DATE)
   private Date dateOfBirth;
 
   @OneToMany(mappedBy = "owner")

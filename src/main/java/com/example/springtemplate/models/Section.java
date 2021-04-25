@@ -20,7 +20,7 @@ public class Section {
     private Integer year;
     @Column(columnDefinition="tinyint(1) default 1")
     private Boolean online;
-    
+
     @ManyToOne
     @JsonIgnore
     private Course course;
