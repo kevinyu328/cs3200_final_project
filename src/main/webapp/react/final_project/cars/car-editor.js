@@ -106,7 +106,7 @@ const CarEditorForm = () => {
         <br/>
         <div>
           {
-            lotId &&
+            lotId !== 'undefined' &&
             <Link to={`/owners/${lot.owner}/lots/${lot.id}`}>
               Click here to edit {lot.name}.
             </Link>
