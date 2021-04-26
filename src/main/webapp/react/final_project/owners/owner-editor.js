@@ -88,7 +88,7 @@ const OwnerEditorForm = () => {
             onClick={() => {
               history.goBack()
             }}
-            className="btn btn-danger btn-block margin-left-10px">Cancel</button>
+            className="btn btn-danger btn-block margin-left-10px">Back</button>
         <button
             onClick={() => deleteOwner(owner.id)}
             className="btn btn-danger btn-block margin-left-10px">Delete</button>

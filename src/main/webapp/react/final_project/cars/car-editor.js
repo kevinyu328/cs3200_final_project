@@ -13,7 +13,7 @@ const CarEditorForm = () => {
 
   useEffect(() => {
     findCarById(carId);
-    findLotById()
+    findLotById();
   }, []);
 
   const findCarById = (id) =>
@@ -21,6 +21,7 @@ const CarEditorForm = () => {
       .then(car => {
         setCar(car);
         setCarCopy(car);
+        carCopy.year ? "" : setCar({...car, type: 'SEDAN'});
       });
 
   const updateCar = (id, newCar) =>
@@ -96,7 +97,7 @@ const CarEditorForm = () => {
             onClick={() => {
               history.goBack()
             }}
-            className="btn btn-danger btn-block margin-left-10px">Cancel</button>
+            className="btn btn-danger btn-block margin-left-10px">Back</button>
         <button
             onClick={() => deleteCar(car.id)}
             className="btn btn-danger btn-block margin-left-10px">Delete</button>

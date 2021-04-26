@@ -78,7 +78,7 @@ const LotEditorForm = () => {
             onClick={() => {
               history.goBack()
             }}
-            className="btn btn-danger btn-block margin-left-10px">Cancel</button>
+            className="btn btn-danger btn-block margin-left-10px">Back</button>
         <button
             onClick={() => deleteLot(lot.id)}
             className="btn btn-danger btn-block margin-left-10px">Delete</button>
