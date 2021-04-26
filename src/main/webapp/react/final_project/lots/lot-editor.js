@@ -42,6 +42,11 @@ const LotEditorForm = () => {
 
   return (
       <div>
+        <div>
+          <Link to={'/'}>
+            Home
+          </Link>
+        </div>
         <h2>
           Lot Editor
         </h2>

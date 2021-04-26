@@ -31,6 +31,11 @@ const CarList = () => {
 
   return(
       <div>
+        <div>
+          <Link to={'/'}>
+            Home
+          </Link>
+        </div>
         <h2>Cars</h2>
         <ul className="list-group">
           {/*<li className="list-group-item">*/}

@@ -15,17 +15,6 @@ const LotList = () => {
     findOwnerById()
   }, []);
 
-  // const createOwner = (owner) =>
-  //     ownerService.createOwner(owner)
-  //     .then(owner => {
-  //       // setNewOwner({title:''})
-  //       setLots(owners => ([...owners, owner]))
-  //     });
-  //
-  // const updateOwner = (id, newOwner) =>
-  //     ownerService.updateOwner(id, newOwner)
-  //     .then(owner => setLots(owners => (owners.map(owner => owner.id === id ? newOwner : owner))));
-  //
   const findAllLots = () =>
       lotService.findAllLots()
       .then(lots => setLots(lots));
@@ -38,36 +27,22 @@ const LotList = () => {
       ownerService.findOwnerById(ownerId)
       .then(owner => setOwner(owner));
 
-  // const deleteOwner = (id) =>
-  //     ownerService.deleteOwner(id)
-  //     .then(owners => setLots(owners => owners.filter(owner => owner.id !== id)));
 
   return(
       <div>
+        <div>
+          <Link to={'/'}>
+            Home
+          </Link>
+        </div>
         <h2>Lots</h2>
         <ul className="list-group">
-          {/*<li className="list-group-item">*/}
-          {/*  <div className="row">*/}
-          {/*    <div className="col">*/}
-          {/*      <input placeholder="Owner Name"*/}
-          {/*             title="Please enter a name for the owner" className="form-control" value={newOwner.title}*/}
-          {/*             onChange={(e) => setNewOwner(newOwner => ({...newOwner, title: e.target.value}))}/>*/}
-          {/*    </div>*/}
-          {/*    <div className="col-3">*/}
-          {/*      <i className="fas fa-plus fa-2x float-right" onClick={() => createCourse(newCourse)}></i>*/}
-          {/*    </div>*/}
-          {/*  </div>*/}
-          {/*</li>*/}
           {
             lots.map(lot =>
                 <li key={lot.id} className="list-group-item">
                   <Link to={`/owners/${ownerId}/lots/${lot.id}`}>
                     {`${lot.name}`}
                   </Link>
-                  {/*<CourseEditorInline key={owner._id}*/}
-                  {/*                    updateOwner={updateOwner}*/}
-                  {/*                    deleteOwner={deleteOwner}*/}
-                  {/*                    owner={owner}/>*/}
                 </li>)
           }
           <li>

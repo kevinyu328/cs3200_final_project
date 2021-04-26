@@ -43,6 +43,11 @@ const CarEditorForm = () => {
 
   return (
       <div>
+        <div>
+          <Link to={'/'}>
+            Home
+          </Link>
+        </div>
         <h2>
           Car Editor
         </h2>
@@ -109,8 +114,8 @@ const CarEditorForm = () => {
         <div>
           {
             carCopy.year &&
-            <Link to={`/lots/${lot.id}/cars`}>
-              Click here to view cars in {lot.name}.
+            <Link to={`/owners/${lot.owner}/lots/${lot.id}`}>
+              Click here to edit {lot.name}.
             </Link>
           }
         </div>

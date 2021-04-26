@@ -34,6 +34,11 @@ const OwnerEditorForm = () => {
 
   return (
       <div>
+        <div>
+          <Link to={'/'}>
+            Home
+          </Link>
+        </div>
         <h2>
           Owner Editor
         </h2>
@@ -52,14 +57,11 @@ const OwnerEditorForm = () => {
             className="form-control margin-bottom-10px"
             value={owner.lastName}
             onChange={(e)=>setOwner(owner => ({...owner, lastName: e.target.value}))}/>
-        {/*<select*/}
-        {/*    className="form-control margin-bottom-10px"*/}
-        {/*    value={owner.username}*/}
-        {/*    onChange={(e)=>setOwner(owner => ({...owner, username: e.target.value}))}>*/}
-        {/*  <option>FALL</option>*/}
-        {/*  <option>SPRING</option>*/}
-        {/*  <option>SUMMER</option>*/}
-        {/*</select>*/}
+        <label>Username</label>
+        <input
+            className="form-control margin-bottom-10px"
+            value={owner.username}
+            onChange={(e)=>setOwner(owner => ({...owner, username: e.target.value}))}/>
         <label>Password</label>
         <input
             className="form-control margin-bottom-10px"

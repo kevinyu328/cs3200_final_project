@@ -1,4 +1,5 @@
 import ownerService from "./owner-service"
+import Home from "../home-component"
 
 const {Link} = window.ReactRouterDOM;
 const { useState, useEffect } = React;
@@ -35,6 +36,7 @@ const OwnerList = () => {
 
   return(
       <div>
+
         <h2>Owners</h2>
         <ul className="list-group">
           {/*<li className="list-group-item">*/}
