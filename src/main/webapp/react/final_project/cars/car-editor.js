@@ -67,14 +67,6 @@ const CarEditorForm = () => {
             className="form-control margin-bottom-10px"
             value={car.manufacturer}
             onChange={(e)=>setCar(lot => ({...car, manufacturer: e.target.value}))}/>
-        {/*<select*/}
-        {/*    className="form-control margin-bottom-10px"*/}
-        {/*    value={owner.username}*/}
-        {/*    onChange={(e)=>setOwner(owner => ({...owner, username: e.target.value}))}>*/}
-        {/*  <option>FALL</option>*/}
-        {/*  <option>SPRING</option>*/}
-        {/*  <option>SUMMER</option>*/}
-        {/*</select>*/}
         <label>Model</label>
         <input
             className="form-control margin-bottom-10px"

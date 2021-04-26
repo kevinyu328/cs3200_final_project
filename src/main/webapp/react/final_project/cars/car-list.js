@@ -15,10 +15,7 @@ const CarList = () => {
   }, []);
 
   const findAllCars = () =>
-      // window.alert('hi');
       carService.findAllCars()
-      // fetch(OWNER_URL)
-      // .then(response => response.json())
       .then(cars => setCars(cars));
 
   const findCarForLot = () =>
@@ -38,18 +35,6 @@ const CarList = () => {
         </div>
         <h2>Cars</h2>
         <ul className="list-group">
-          {/*<li className="list-group-item">*/}
-          {/*  <div className="row">*/}
-          {/*    <div className="col">*/}
-          {/*      <input placeholder="Owner Name"*/}
-          {/*             title="Please enter a name for the owner" className="form-control" value={newOwner.title}*/}
-          {/*             onChange={(e) => setNewOwner(newOwner => ({...newOwner, title: e.target.value}))}/>*/}
-          {/*    </div>*/}
-          {/*    <div className="col-3">*/}
-          {/*      <i className="fas fa-plus fa-2x float-right" onClick={() => createCourse(newCourse)}></i>*/}
-          {/*    </div>*/}
-          {/*  </div>*/}
-          {/*</li>*/}
           {
             cars.map(car =>
                 <li key={car.id} className="list-group-item">

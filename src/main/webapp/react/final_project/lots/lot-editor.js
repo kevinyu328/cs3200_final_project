@@ -65,39 +65,12 @@ const LotEditorForm = () => {
             className="form-control margin-bottom-10px"
             value={lot.location}
             onChange={(e)=>setLot(lot => ({...lot, location: e.target.value}))}/>
-        {/*<select*/}
-        {/*    className="form-control margin-bottom-10px"*/}
-        {/*    value={owner.username}*/}
-        {/*    onChange={(e)=>setOwner(owner => ({...owner, username: e.target.value}))}>*/}
-        {/*  <option>FALL</option>*/}
-        {/*  <option>SPRING</option>*/}
-        {/*  <option>SUMMER</option>*/}
-        {/*</select>*/}
         <label>Revenue</label>
         <input
             type='number'
             className="form-control margin-bottom-10px"
             value={lot.revenue}
             onChange={(e)=>setLot(lot => ({...lot, revenue: parseInt(e.target.value)}))}/>
-        {/*<label>Owner</label>*/}
-        {/*<select*/}
-        {/*    className="form-control margin-bottom-10px"*/}
-        {/*    value={lot.owner}*/}
-        {/*    onChange={(e)=>setLot(lot => ({...lot, owner: e.target.value}))}>*/}
-        {/*  {*/}
-        {/*    owners.map(owner =>*/}
-        {/*        <option>{owner.firstName}</option>)*/}
-        {/*  }*/}
-        {/*/!*  /!*<option>FALL</option>*!/*!/*/}
-        {/*/!*  /!*<option>SPRING</option>*!/*!/*/}
-        {/*/!*  /!*<option>SUMMER</option>*!/*!/*/}
-        {/*</select>*/}
-        {/*<label>Owner</label>*/}
-        {/*<input*/}
-        {/*    className="form-control margin-bottom-10px"*/}
-        {/*    value={lot.cars}*/}
-        {/*    onChange={(e)=>setLot(lot => ({...lot, owner: e.target.value}))}/>*/}
-
         <button
             onClick={lotCopy.name ? () => updateLot(lot.id, lot) : () => createLotForOwner(ownerId, lot)}
             className="btn btn-success btn-block">Save</button>

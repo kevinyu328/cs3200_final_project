@@ -15,7 +15,6 @@ const OwnerList = () => {
   const createOwner = (owner) =>
       ownerService.createOwner(owner)
       .then(owner => {
-        // setNewOwner({title:''})
         setOwners(owners => ([...owners, owner]))
       });
 
@@ -24,10 +23,7 @@ const OwnerList = () => {
       .then(owner => setOwners(owners => (owners.map(owner => owner.id === id ? newOwner : owner))));
 
   const findAllOwners = () =>
-      // window.alert('hi');
       ownerService.findAllOwners()
-      // fetch(OWNER_URL)
-      // .then(response => response.json())
       .then(owners => setOwners(owners));
 
   const deleteOwner = (id) =>
@@ -39,18 +35,6 @@ const OwnerList = () => {
 
         <h2>Owners</h2>
         <ul className="list-group">
-          {/*<li className="list-group-item">*/}
-          {/*  <div className="row">*/}
-          {/*    <div className="col">*/}
-          {/*      <input placeholder="Owner Name"*/}
-          {/*             title="Please enter a name for the owner" className="form-control" value={newOwner.title}*/}
-          {/*             onChange={(e) => setNewOwner(newOwner => ({...newOwner, title: e.target.value}))}/>*/}
-          {/*    </div>*/}
-          {/*    <div className="col-3">*/}
-          {/*      <i className="fas fa-plus fa-2x float-right" onClick={() => createCourse(newCourse)}></i>*/}
-          {/*    </div>*/}
-          {/*  </div>*/}
-          {/*</li>*/}
           {
             owners.map(owner =>
                 <li key={owner.id} className="list-group-item">
