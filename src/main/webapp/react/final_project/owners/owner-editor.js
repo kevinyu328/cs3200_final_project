@@ -1,10 +1,11 @@
 import ownerService from "./owner-service"
 
 const {useState, useEffect} = React;
-const {useParams, useHistory} = window.ReactRouterDOM;
+const {useParams, useHistory, Link} = window.ReactRouterDOM;
 
 const OwnerEditorForm = () => {
   const [owner, setOwner] = useState({});
+  const [ownerCopy, setOwnerCopy] = useState({});
   const {ownerId} = useParams();
   const history = useHistory();
 
@@ -14,7 +15,10 @@ const OwnerEditorForm = () => {
 
   const findOwnerById = (id) =>
       ownerService.findOwnerById(id)
-      .then(owner => setOwner(owner));
+      .then(owner => {
+        setOwner(owner);
+        setOwnerCopy(owner);
+      });
 
   const updateOwner = (id, newOwner) =>
       ownerService.updateOwner(id, newOwner)
@@ -22,6 +26,10 @@ const OwnerEditorForm = () => {
 
   const deleteOwner = (id) =>
       ownerService.deleteOwner(id)
+      .then(() => history.goBack());
+
+  const createOwner = (owner) =>
+      ownerService.createOwner(owner)
       .then(() => history.goBack());
 
   return (
@@ -71,9 +79,8 @@ const OwnerEditorForm = () => {
         />
 
 
-        <br/>
         <button
-            onClick={() => updateOwner(owner.id, owner)}
+            onClick={ownerCopy.firstName ? () => updateOwner(owner.id, owner) : () => createOwner(owner)}
             className="btn btn-success btn-block">Save</button>
         <button
             onClick={() => {
@@ -83,7 +90,20 @@ const OwnerEditorForm = () => {
         <button
             onClick={() => deleteOwner(owner.id)}
             className="btn btn-danger btn-block margin-left-10px">Delete</button>
+
+        <br/>
+        <br/>
+        <div>
+          {
+            ownerCopy.firstName &&
+            <Link to={`/owners/${owner.id}/lots`}>
+              Click here to view {owner.firstName} {owner.lastName}'s owned lots.
+            </Link>
+          }
+        </div>
+
       </div>
+
   )
 };
 
