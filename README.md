@@ -1,4 +1,4 @@
-# cs3200_final_project - Car Dealerships
+# Car Dealerships
 This repository is for the final project for CS3200 at Northeastern University.
 
 ## Team Name
