@@ -41,10 +41,6 @@ const CarList = () => {
                   <Link to={`/lots/${lotId}/cars/${car.id}`}>
                     {`${car.year} ${car.manufacturer} ${car.model}`}
                   </Link>
-                  {/*<CourseEditorInline key={owner._id}*/}
-                  {/*                    updateOwner={updateOwner}*/}
-                  {/*                    deleteOwner={deleteOwner}*/}
-                  {/*                    owner={owner}/>*/}
                 </li>)
           }
           <li>

@@ -8,7 +8,6 @@ import CarEditorForm from "./cars/car-editor";
 const {HashRouter, Route, Link} = window.ReactRouterDOM;
 
 const App = () => {
-    // console.log(window.ReactRouterDOM)
     return (
         <div className="container-fluid">
             <HashRouter>
@@ -18,12 +17,14 @@ const App = () => {
                 <Route path={["/owners/:ownerId", '/owners/create']} exact={true}>
                     <OwnerEditorForm/>
                 </Route>
+
                 <Route path={["/owners/:ownerId/lots", '/lots']} exact={true}>
                     <LotList/>
                 </Route>
                 <Route path={["/owners/:ownerId/lots/:lotId", '/lots/create', '/owners/:ownerId/lots/create']} exact={true}>
                     <LotEditorForm/>
                 </Route>
+
                 <Route path="/lots/:lotId/cars" exact={true}>
                     <CarList/>
                 </Route>
