@@ -46,12 +46,16 @@ const LotList = () => {
                 </li>)
           }
           <li>
-            <Link to={owner.firstName ? `/owners/${ownerId}/lots/create` : '/lots/create'}>
-              <button className='create-btn btn btn-primary'>
-                {owner.firstName ?
-                `Add Lot for ${owner.firstName} ${owner.lastName}` : 'Add lot'}
-              </button>
-            </Link>
+            {
+              owner.firstName &&
+              <Link to={owner.firstName ? `/owners/${ownerId}/lots/create` : '/lots/create'}>
+                <button className='create-btn btn btn-primary'>
+                  {owner.firstName ?
+                      `Add Lot for ${owner.firstName} ${owner.lastName}` : 'Add lot'}
+                </button>
+              </Link>
+            }
+
           </li>
         </ul>
       </div>

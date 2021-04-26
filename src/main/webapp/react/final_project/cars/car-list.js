@@ -44,11 +44,14 @@ const CarList = () => {
                 </li>)
           }
           <li>
-            <Link to={lot.name ? `/lots/${lotId}/cars/create` : '/lots/create'}>
-              <button className='create-btn btn btn-primary'>
-                {lot.name ? `Add car to ${lot.name}` : 'Add car'}
-              </button>
-            </Link>
+            {
+              lotId &&
+              <Link to={lot.name ? `/lots/${lotId}/cars/create` : '/lots/create'}>
+                <button className='create-btn btn btn-primary'>
+                  {lot.name ? `Add car to ${lot.name}` : 'Add car'}
+                </button>
+              </Link>
+            }
           </li>
         </ul>
       </div>

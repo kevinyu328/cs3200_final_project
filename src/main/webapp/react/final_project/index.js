@@ -25,7 +25,7 @@ const App = () => {
                     <LotEditorForm/>
                 </Route>
 
-                <Route path="/lots/:lotId/cars" exact={true}>
+                <Route path={["/lots/:lotId/cars", "/cars"]} exact={true}>
                     <CarList/>
                 </Route>
                 <Route path={["/lots/:lotId/cars/:carId", 'cars/create', 'lots/:lotId/cars/create']} exact={true}>
