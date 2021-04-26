@@ -106,7 +106,7 @@ const CarEditorForm = () => {
         <br/>
         <div>
           {
-            carCopy.year &&
+            lotId &&
             <Link to={`/owners/${lot.owner}/lots/${lot.id}`}>
               Click here to edit {lot.name}.
             </Link>
