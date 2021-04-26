@@ -41,10 +41,6 @@ const OwnerList = () => {
                   <Link to={`/owners/${owner.id}`}>
                     {`${owner.firstName} ${owner.lastName}`}
                   </Link>
-                  {/*<CourseEditorInline key={owner._id}*/}
-                  {/*                    updateOwner={updateOwner}*/}
-                  {/*                    deleteOwner={deleteOwner}*/}
-                  {/*                    owner={owner}/>*/}
                 </li>)
           }
           <li>

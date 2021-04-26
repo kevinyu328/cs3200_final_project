@@ -99,7 +99,7 @@ const OwnerEditorForm = () => {
           {
             ownerCopy.firstName &&
             <Link to={`/owners/${owner.id}/lots`}>
-              Click here to view {owner.firstName} {owner.lastName}'s owned lots.
+              Click here to view the lots owned by {owner.firstName} {owner.lastName}.
             </Link>
           }
         </div>

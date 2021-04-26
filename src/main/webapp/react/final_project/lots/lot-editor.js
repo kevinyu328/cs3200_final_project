@@ -89,7 +89,7 @@ const LotEditorForm = () => {
           {
             lotCopy.name &&
             <Link to={`/lots/${lot.id}/cars`}>
-              Click here to view cars in {lot.name}.
+              Click here to view cars that {lot.name} sells.
             </Link>
           }
         </div>
